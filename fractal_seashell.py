@@ -5,10 +5,9 @@ This script generates a 3D conical mollusc shell with tapered ends.
 """
 
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import random
-
+from mpl_toolkits.mplot3d import Axes3D
 
 # =====================
 # 3D Double Seashell

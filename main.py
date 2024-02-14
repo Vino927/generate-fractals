@@ -1,10 +1,10 @@
 # main.py
 from matplotlib import pyplot as plt
-import numpy as np
 from fractal_fern import generate_fractal_fern
 from fractal_seashell import generate_double_seashell
 from fractal_tree import draw_fractal_tree_3d
 from utils import rotate_points
+import numpy as np
 
 # Usage: After each window pops up, close the window then press Enter in the terminal 
 # window to continue with the next plot
