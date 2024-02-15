@@ -46,16 +46,16 @@ By default, `main.py` is set up to generate all included fractal patterns. You c
 ## Unit Testing
 Unit tests are an integral part of this project to ensure the reliability and correctness of fractal generation algorithms.
 
-Running Tests
+### Running Tests
 To run the unit tests, navigate to the project's root directory and use the following command:
 
-bash
-Copy code
+```
 python -m unittest
-This command discovers and runs all tests written in files matching the pattern test*.py within the project.
+```
+This command discovers and runs all tests written in files matching the pattern `test*.py` within the project.
 
-## Writing Tests
-New unit tests can be added to the tests/ directory. Ensure each test file is named using the test_*.py pattern and contains test cases that inherit from unittest.TestCase.
+### Writing Tests
+New unit tests can be added to the `tests/ directory`. Ensure each test file is named using the `test_*.py` pattern and contains test cases that inherit from `unittest.TestCase`.
 
 ## Contributing
 We welcome contributions to this project! Whether you have suggestions for new fractal patterns to include, improvements to existing algorithms, or bug fixes, please feel free to make a pull request or open an issue.
