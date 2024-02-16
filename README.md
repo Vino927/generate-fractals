@@ -58,6 +58,13 @@ New unit tests can be added to the `tests/ directory`. Ensure each test file is 
 We welcome contributions to this project! Whether you have suggestions for new fractal patterns to include, improvements to existing algorithms, or bug fixes, please feel free to make a pull request or open an issue.
 
 ## License
-This project is open source and available under the [MIT License](LICENSE).
+
+## License
+
+This project is licensed under the GNU General Public License (GPL) v3.0. The GPL is a free, copyleft license that allows software to be freely used, modified, and shared under the same terms. GPL v3.0 further strengthens this approach by ensuring that all derived works are also distributed under the GPL, protecting the software's freedom and the rights of users of GPL-licensed code.
+
+For more details, see the full GPL license text here: [GPL v3.0 License](https://www.gnu.org/licenses/gpl-3.0.html).
+
+
 
 ---
