@@ -1,5 +1,4 @@
 # Copyright (C) [2024] [Vino Gupta]
-
 # This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
 # This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License along with this program; if not, see <https://www.gnu.org/licenses>.
@@ -15,12 +14,9 @@ from fractal_tree import draw_fractal_tree_3d
 from utils import rotate_points
 import numpy as np
 
-# Usage: After each window pops up, close the window then press Enter in the terminal 
-# window to continue with the next plot
-
 def main():
-    # Generate and plot a fern with a specific number of points
 
+    # Generate and plot a fern with a specific number of points
     plt.figure(figsize=(6, 9))  # Create a new figure for the Barnsley Fern
     fern = FractalFern(100000)
     fern.generate_points()
@@ -51,7 +47,7 @@ def main():
     ax1.set_ylabel('Y axis')
     ax1.set_zlabel('Z axis')
     plt.axis('off')
-   
+
 
     # Draw 3D Fractal Tree
     print("Plotting the fractal tree...")

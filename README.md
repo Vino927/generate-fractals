@@ -28,8 +28,6 @@ To generate a specific fractal, run the `main.py` script with Python:
 ```
 python main.py
 ```
-NOTE:
- After each window pops up, close the window then press Enter in the terminal window to continue with the next plot
 
 By default, `main.py` is set up to generate all included fractal patterns. You can modify this script to generate specific fractals or to change parameters such as the number of points or the recursion depth.
 
@@ -37,7 +35,7 @@ By default, `main.py` is set up to generate all included fractal patterns. You c
 - `main.py`: The entry point of the project, responsible for invoking the generation of different fractals.
 - `utils.py`: Contains common utilities and shared functions used across multiple fractal scripts.
 - `fractal_fern.py`: Defines the function to generate and plot the Barnsley Fern fractal.
-- `fractal_seashell.py`: Implements the generation and visualization of the 3D Double Seashell fractal.
+- `seashell.py`: Implements the generation and visualization of the 3D Double Seashell fractal.
 - `fractal_tree.py`: Provides the functionality to generate and visualize a 3D Fractal Tree.
 
 ## Unit Testing
