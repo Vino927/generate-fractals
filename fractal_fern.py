@@ -35,16 +35,3 @@ def generate_fractal_fern_points(points=1000):
         y_list.append(y)
 
     return x_list, y_list
-
-def plot_fractal_fern(x_list, y_list):
-    """
-    Plots the Barnsley Fern fractal from given x and y coordinates.
-
-    Parameters:
-    - x_list: List of x coordinates.
-    - y_list: List of y coordinates.
-    """
-    plt.scatter(x_list, y_list, s=0.1, color="green")
-    plt.axis('off')
-    plt.show()
-    input("Press Enter to continue...")
