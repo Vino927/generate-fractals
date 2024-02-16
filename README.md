@@ -6,6 +6,10 @@ Fractals are mathematical structures characterized by repeating patterns that ap
 
 This project is dedicated to generating a fractals from nature such as a fern and tree. A seashell, while not a fractal can also be modelled by a mathematical formula. Each fractal is generated using specific mathematical formulas and visualized with Python's matplotlib library. The project is structured modularly, with separate scripts for each fractal pattern and a common utilities file for shared functionality.
 
+![Fractal Fern](fractal_fern.png "Fractal Fern")
+![Seashell](seashell.png "Seashell")
+![Fractal Tree](fractal_tree.png "Fractal Tree")
+
 ## Getting Started
 
 ### Prerequisites
