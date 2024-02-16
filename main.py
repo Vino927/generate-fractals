@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # main.py
 from matplotlib import pyplot as plt
 from fractal_fern import generate_fractal_fern_points

@@ -1,4 +1,28 @@
 # fractal_fern.py
+#
+# The Barnsley Fern is a fractal that mimics the appearance of a natural fern using 
+# mathematical equations. It is generated through a process called 
+# iterated function system (IFS), which involves four affine transformations. 
+# Each point (x, y) on the plane is transformed to a new point using one of these 
+# transformations, chosen randomly at each iteration but with fixed probabilities 
+# that dictate the overall shape of the fern:
+#
+# 1. f1(x, y) = (0, 0.16y)
+#    - Probability: 1%. This transformation maps any point to a position that contributes to the stem of the fern.
+# 
+# 2. f2(x, y) = (0.85x + 0.04y, -0.04x + 0.85y + 1.6)
+#
+#    - Probability: 85%. This simulates the larger, successively smaller leaflets of the fern.
+# 3. f3(x, y) = (0.2x - 0.26y, 0.23x + 0.22y + 1.6)
+#    - Probability: 7%. Represents the bottom left leaflet.
+#
+# 4. f4(x, y) = (-0.15x + 0.28y, 0.26x + 0.24y + 0.44)
+#    - Probability: 7%. Represents the bottom right leaflet.
+#
+# Starting from an initial point, such as the origin (0,0), the algorithm repeatedly 
+# applies one of these transformations, chosen randomly based on the specified 
+# probabilities. The result is a detailed pattern that closely resembles a fern.
+
 import matplotlib.pyplot as plt
 import random
 
