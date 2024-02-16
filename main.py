@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # main.py
 from matplotlib import pyplot as plt
-from fractal_fern import generate_fractal_fern_points
+from fractal_fern import FractalFern
 from seashell import generate_double_seashell
 from fractal_tree import draw_fractal_tree_3d
 from utils import rotate_points
@@ -12,19 +12,11 @@ import numpy as np
 
 def main():
     # Generate and plot a fern with a specific number of points
-    #generate_fractal_fern(100000)
 
-    # Generate fractal fern points
-    print("Generating fractal fern points...")
-    x_list, y_list = generate_fractal_fern_points(points=10000)  # Adjust the number of points as needed
-
-    # Plot the generated fractal fern
-    print("Plotting the fractal fern...")
-    plt.figure(figsize=(10, 10))  # Create a new figure for the Fractal Tree
-    ax = plt.axes(projection='3d')
-    plt.scatter(x_list, y_list, s=0.1, color="green")
-    plt.axis('off')
-
+    plt.figure(figsize=(6, 9))  # Create a new figure for the Barnsley Fern
+    fern = FractalFern(100000)
+    fern.generate_points()
+    fern.plot()
 
     # Generate 3D Double Seashell
     # Parameters for the shell
