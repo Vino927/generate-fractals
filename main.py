@@ -1,7 +1,7 @@
 # main.py
 from matplotlib import pyplot as plt
 from fractal_fern import generate_fractal_fern_points
-from fractal_seashell import generate_double_seashell
+from seashell import generate_double_seashell
 from fractal_tree import draw_fractal_tree_3d
 from utils import rotate_points
 import numpy as np
