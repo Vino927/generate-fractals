@@ -62,7 +62,8 @@ def main():
     ax2.set_zlim([0, 2])
     ax2.view_init(elev=10, azim=60)
     plt.axis('off')
-    plt.show()
+    plt.show(block=True)
+    plt.close('all')  # Close all figures
 
 
 if __name__ == "__main__":
