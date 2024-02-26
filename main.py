@@ -15,27 +15,33 @@ from fractal_tree import FractalTree3D
 from utils import rotate_points
 import numpy as np
 def main():
-    fig = plt.figure(figsize=(18, 6))
-    
-    # Barnsley Fern (2D)
-    ax1 = fig.add_subplot(131)  # 1 row, 3 cols, 1st subplot
-    fern = FractalFern(100000)
-    fern.generate_points()
-    fern.plot(ax=ax1)
-    
-    # 3D Double Seashell
-    ax2 = fig.add_subplot(132, projection='3d')  # 1 row, 3 cols, 2nd subplot
-    seashell = DoubleSeashell(a=0.1, b=0.2, c=0.15, n_turns=10, n_turns_inv=5, thickness=0.05, points=8000)
-    seashell.generate_points()
-    seashell.plot(ax=ax2)
-    
-    # 3D Fractal Tree
-    # ax3 = fig.add_subplot(133, projection='3d')  # 1 row, 3 cols, 3rd subplot
-    # tree = FractalTree3D(base=np.array([0, 0, 0]), length=1, direction=np.array([0.001, 0.001, 1]), depth=7, branch_angle=np.pi / 4, scale_factor=0.5)
-    # tree.generate_points()  # Assuming this exists and populates the tree structure
-    # tree.plot(ax=ax3, set_limits=True, view_init_elev=10, view_init_azim=60)
+    # Create figures for each plot
+    fig1, ax1 = plt.subplots(figsize=(5, 7))
 
+    fig2 = plt.figure(figsize=(8, 6))
+    ax2 = fig2.add_subplot(111, projection='3d')
+
+    fig3 = plt.figure(figsize=(8, 6))
+    ax3 = fig3.add_subplot(111, projection='3d')
+                           
+    # Plot Fractal Fern in the 1st subplot
+    fern = FractalFern(100000)
+    fern.generate_points()  
+    fern.plot(ax=ax1)  
+
+    # Plot Double Seashell in the 2nd subplot
+    seashell = DoubleSeashell(a=0.1, b=0.2, c=0.15, n_turns=10, n_turns_inv=5, thickness=0.05, points=8000)
+    seashell.generate_points() 
+    seashell.plot(ax=ax2) 
+
+    # Plot Fractal Tree in the 3rd subplot
+    tree = FractalTree3D(base=np.array([0, 0, 0]), length=1, direction=np.array([0.001, 0.001, 1]), depth=7, branch_angle=np.pi / 4, scale_factor=0.5)
+    tree.generate_points()  
+    tree.plot(ax=ax3, set_limits=True, view_init_elev=10, view_init_azim=60)  
+ 
     plt.show()
+    plt.close('all')
+
 
 if __name__ == "__main__":
     main()

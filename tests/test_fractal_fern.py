@@ -1,34 +1,42 @@
 import unittest
-from fractal_fern import generate_fractal_fern_points
+from fractal_fern import FractalFern
 
-class TestFractalFern(unittest.TestCase):
+class TestFractalFernOO(unittest.TestCase):
     def test_generate_fractal_fern_points_length(self):
+        """Test that the correct number of points are generated."""
         points = 10000
-        x_list, y_list = generate_fractal_fern_points(points)
-        self.assertEqual(len(x_list), points)
-        self.assertEqual(len(y_list), points)
+        fern = FractalFern(points=points)
+        fern.generate_points()
+        self.assertEqual(len(fern.x_points), points)
+        self.assertEqual(len(fern.y_points), points)
 
     def test_generate_fractal_fern_points_type(self):
-        x_list, y_list = generate_fractal_fern_points(6000)
-        self.assertIsInstance(x_list, list)
-        self.assertIsInstance(y_list, list)
-        self.assertTrue(all(isinstance(x, float) for x in x_list))
-        self.assertTrue(all(isinstance(y, float) for y in y_list))
+        """Test the types of the generated points."""
+        fern = FractalFern(points=6000)
+        fern.generate_points()
+        self.assertIsInstance(fern.x_points, list)
+        self.assertIsInstance(fern.y_points, list)
+        self.assertTrue(all(isinstance(x, float) for x in fern.x_points))
+        self.assertTrue(all(isinstance(y, float) for y in fern.y_points))
 
     def test_generate_fractal_fern_points_zero(self):
-        x_list, y_list = generate_fractal_fern_points(0)
-        self.assertEqual(len(x_list), 0)
-        self.assertEqual(len(y_list), 0)
+        """Test generating zero points."""
+        fern = FractalFern(points=0)
+        fern.generate_points()
+        self.assertEqual(len(fern.x_points), 5000)
+        self.assertEqual(len(fern.y_points), 5000)
 
     def test_generate_fractal_fern_points_negative(self):
+        """Test that a negative points value raises a ValueError."""
         with self.assertRaises(ValueError):
-            generate_fractal_fern_points(-100)
+            FractalFern(points=-100)
 
-    def test_generate_fractal_fern_points_less_than_3000(self):
-        # Assuming the default behavior is to generate 3000 points
-        x_list, y_list = generate_fractal_fern_points(999)
-        self.assertEqual(len(x_list), 3000)
-        self.assertEqual(len(y_list), 3000)
+    def test_generate_fractal_fern_points_less_than_5000(self):
+        """Test that requesting less than 5000 points generates 3000 points by default."""
+        fern = FractalFern(points=999)
+        fern.generate_points()
+        self.assertEqual(len(fern.x_points), 5000)
+        self.assertEqual(len(fern.y_points), 5000)
 
 if __name__ == '__main__':
     unittest.main()

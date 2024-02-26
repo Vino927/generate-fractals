@@ -31,6 +31,17 @@ class DoubleSeashell:
         - thickness: Thickness of the shell.
         - points: Number of points to generate for each curve.
         """
+
+                # Type and value checking for each parameter
+        if not all(isinstance(param, (int, float)) for param in [a, b, c, thickness]) or not isinstance(points, int):
+            raise TypeError("Parameters a, b, c, thickness must be int or float, and points must be int.")
+        
+        if any(param <= 0 for param in [a, b, c, thickness, points]):
+            raise ValueError("Parameters a, b, c, thickness, and points must be positive.")
+        
+        if not all(isinstance(param, int) and param > 0 for param in [n_turns, n_turns_inv]):
+            raise ValueError("Parameters n_turns and n_turns_inv must be positive integers.")
+
         self.a = a
         self.b = b
         self.c = c
@@ -53,11 +64,25 @@ class DoubleSeashell:
         x, y, z = r * np.cos(theta), r * np.sin(theta), self.c * theta
 
         # Shell construction
+        # Initialize empty lists to hold the x, y, and z coordinates of the shell's surface points.
+
         self.x_shell, self.y_shell, self.z_shell = [], [], []
+            
+        # Iterate through each point (xi, yi, zi) that defines the spiral path of the shell.
         for xi, yi, zi in zip(x, y, z):
+
+        # For each point on the spiral, generate a circle perpendicular to the spiral's path.
+        # This circle's radius is determined by the shell's thickness parameter.
+        # `np.linspace(0, 2 * np.pi, 10)` creates 10 points evenly spaced around the circle.
             for t in np.linspace(0, 2 * np.pi, 10):
+
+                # Calculate the x and y coordinates of each point on the circle using trigonometric functions.
+                # The circle's center is offset from the spiral path by the shell's thickness.
+                # This effectively "wraps" a circular cross-section around the spiral path, creating the shell's thickness.
                 self.x_shell.append(xi + self.thickness * np.cos(t))
                 self.y_shell.append(yi + self.thickness * np.sin(t))
+                
+                # The z coordinate is the same as the current point on the spiral, keeping the circle's plane perpendicular to the spiral's path.
                 self.z_shell.append(zi)
 
         # Inverse shell calculation
@@ -82,6 +107,7 @@ class DoubleSeashell:
         - ax: Optional. A matplotlib 3D axes object where the seashell will be plotted.
              If None, a new figure and 3D axes will be created.
         """
+        print("Plotting the seashell...")
         if ax is None:
             fig = plt.figure(figsize=(8, 6))
             ax = fig.add_subplot(111, projection='3d')
@@ -94,6 +120,7 @@ class DoubleSeashell:
         ax.set_title("3D Double Seashell")
         ax.axis('off')  # Optionally turn off the axis if desired
 
+  
         # If ax was provided, plt.show() might be managed outside this method
         if ax is None:
             plt.show()
